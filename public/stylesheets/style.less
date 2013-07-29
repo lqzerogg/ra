@@ -1,0 +1,113 @@
+@import "variables.less";
+@import "mixins.less";
+@import "bootstrap-revise.less";
+
+body {
+	position: relative;
+	padding-top: 70px;
+}
+
+.siteToggler {
+	text-align: right;
+}
+.litb, .mini {
+	color: @grayLight;
+}
+
+.litb {
+	&:hover {
+		color: @litb;
+		text-decoration: none;
+	}
+	&.active, &.active:hover {
+		color: white;
+		background-color: @litb;
+	}
+}
+.mini {
+	&:hover {
+		color: @mini;
+		text-decoration: none;
+	}
+	&.active, &.active:hover {
+		color: white;
+		background-color: @mini;
+	}
+}
+
+h2 {
+	float: left;
+}
+
+section {
+	margin-top: 30px;
+}
+
+#wizards {
+	position: relative;
+	overflow: hidden;
+}
+
+.header {
+	margin-top: 30px;
+}
+
+.action {
+	float: left;
+	a {
+		margin-left: 20px;
+		display: inline-block;
+		font: 50px/50px Arial;
+		color: white;
+		text-decoration: none;
+		text-align: center;
+		width: 50px;
+		&.add {
+			background-color: @orange;
+		}
+		&.remove {
+			background-color: @grayLight;
+		}
+	}
+}
+
+legend .inactive {
+	border-color: white;
+	.box-shadow(none);
+	font-weight: bold;
+	cursor: pointer;
+	&:hover {
+		text-decoration: underline;
+	}
+	&[readonly] {
+		cursor: default;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+pre.log {
+	margin-top: 20px;
+	background-color: black;
+	color: white;
+	height: 300px;
+	overflow: scroll;
+}
+
+.actions .pull-right {
+	margin-left: 10px;
+}
+
+.wizardPanel {
+	position: absolute;
+	width: 100%;
+}
+
+#pubStaticPanel, #pubSimPanel, #configPanel, #pubOperPanel {
+	left: 101%;
+}
+
+#configPanel table th {
+	border-top: none;
+}

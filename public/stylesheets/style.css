@@ -1,0 +1,103 @@
+.btn:focus {
+  outline: none;
+}
+body {
+  position: relative;
+  padding-top: 70px;
+}
+.siteToggler {
+  text-align: right;
+}
+.litb,
+.mini {
+  color: #999999;
+}
+.litb:hover {
+  color: #990000;
+  text-decoration: none;
+}
+.litb.active,
+.litb.active:hover {
+  color: white;
+  background-color: #990000;
+}
+.mini:hover {
+  color: #0076c1;
+  text-decoration: none;
+}
+.mini.active,
+.mini.active:hover {
+  color: white;
+  background-color: #0076c1;
+}
+h2 {
+  float: left;
+}
+section {
+  margin-top: 30px;
+}
+#wizards {
+  position: relative;
+  overflow: hidden;
+}
+.header {
+  margin-top: 30px;
+}
+.action {
+  float: left;
+}
+.action a {
+  margin-left: 20px;
+  display: inline-block;
+  font: 50px/50px Arial;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  width: 50px;
+}
+.action a.add {
+  background-color: #f89406;
+}
+.action a.remove {
+  background-color: #999999;
+}
+legend .inactive {
+  border-color: white;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+legend .inactive:hover {
+  text-decoration: underline;
+}
+legend .inactive[readonly] {
+  cursor: default;
+}
+legend .inactive[readonly]:hover {
+  text-decoration: none;
+}
+pre.log {
+  margin-top: 20px;
+  background-color: black;
+  color: white;
+  height: 300px;
+  overflow: scroll;
+}
+.actions .pull-right {
+  margin-left: 10px;
+}
+.wizardPanel {
+  position: absolute;
+  width: 100%;
+}
+#pubStaticPanel,
+#pubSimPanel,
+#configPanel,
+#pubOperPanel {
+  left: 101%;
+}
+#configPanel table th {
+  border-top: none;
+}

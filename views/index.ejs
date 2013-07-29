@@ -1,0 +1,162 @@
+<% include header %>
+
+	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css" />
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+	<script src="bootstrap/js/bootstrap.js"></script>
+
+	<div class="container">
+		<div class="siteToggler">
+			<h1><a href="#" class="litb active">LightInTheBox</a>
+			/
+			<a href="#" class="mini">Miniinthebox</a></h1>
+		</div>
+
+		<div class="header clearfix">
+			<h2>发版任务</h2>
+			<div class="action">
+				<a href="#" class="add">+</a>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="span5">
+				<section>
+					<table class="table table-bordered">
+						<tr>
+							<th></th>
+							<th>名称</th>
+							<th>svn 版本</th>
+							<th>状态</th>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>1.9.4.1 reward</td>
+							<td>99585</td>
+							<td>完成</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>1.9.4.2 reward bugfix</td>
+							<td>99610</td>
+							<td>已发仿真</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>1.9.4.3 checkout</td>
+							<td>99680</td>
+							<td>新建</td>
+						</tr>
+					</table>
+				</section>
+			</div>
+			<div class="span1"></div>
+			<div class="span6">
+				<section>
+					<form>
+						<input type="hidden" name="task-id" id="taskId">
+					  <fieldset>
+					    <legend><input type="text" name="task-name" id="taskName" class="inactive" placeholder="名称"></legend>
+
+					    <div id="wizards">
+						    <div id="initPanel" class="wizardPanel">
+							    <label class="control-label" for="codeVersion">svn 版本</label>
+							    <input type="text" name="code-version" id="codeVersion">
+							    <div class="actions clearfix">
+								    <button type="submit" class="btn btn-primary pull-left" id="saveTask">保存</button>
+								    <button type="submit" class="btn pull-right nextStep" disabled>下一步 &#8811;</button>
+								    <button type="submit" class="btn btn-warning pull-right" id="exportCode" disabled>打包并同步代码</button>
+								  </div>
+								</div>
+
+						    <div id="pubStaticPanel" class="wizardPanel">
+							    <div class="actions">
+								    <button type="submit" class="btn pull-left prevStep">&#8810; 上一步</button>
+								    <button type="submit" class="btn pull-right nextStep" disabled>下一步 &#8811;</button>
+								    <button type="submit" class="btn btn-warning pull-right" id="pubStatic">发布到静态服务器</button>
+								  </div>
+								</div>
+
+						    <div id="pubSimPanel" class="wizardPanel">
+							    <div class="actions">
+								    <button type="submit" class="btn pull-left prevStep">&#8810; 上一步</button>
+								    <button type="submit" class="btn pull-right nextStep" disabled>下一步 &#8811;</button>
+								    <button type="submit" class="btn btn-warning pull-right" id="pubSim">发布到仿真服务器</button>
+								  </div>
+								</div>
+
+						    <div id="configPanel" class="wizardPanel">
+							    <table class="table table-hover">
+							    	<tr>
+							    		<th>服务器</th>
+							    		<th>A</th>
+							    		<th>B</th>
+							    	</tr>
+							    	<tr>
+							    		<td>WEB1</td>
+							    		<td><input type="radio" name="WEB1" checked disabled></td>
+							    		<td><input type="radio" name="WEB1" disabled></td>
+							    	</tr>
+							    	<tr>
+							    		<td>WEB3</td>
+							    		<td><input type="radio" name="WEB3" checked disabled></td>
+							    		<td><input type="radio" name="WEB3" disabled></td>
+							    	</tr>
+							    	<tr>
+							    		<td>WEB4</td>
+							    		<td><input type="radio" name="WEB4" checked disabled></td>
+							    		<td><input type="radio" name="WEB4" disabled></td>
+							    	</tr>
+							    	<tr>
+							    		<td>WEB5</td>
+							    		<td><input type="radio" name="WEB5" checked disabled></td>
+							    		<td><input type="radio" name="WEB5" disabled></td>
+							    	</tr>
+							    	<tr>
+							    		<td>SSL1</td>
+							    		<td><input type="radio" name="SSL1" checked disabled></td>
+							    		<td><input type="radio" name="SSL1" disabled></td>
+							    	</tr>
+							    	<tr>
+							    		<td>SSL2</td>
+							    		<td><input type="radio" name="SSL2" checked disabled></td>
+							    		<td><input type="radio" name="SSL2" disabled></td>
+							    	</tr>
+							    	<tr>
+							    		<td>SSL3</td>
+							    		<td><input type="radio" name="SSL3" checked disabled></td>
+							    		<td><input type="radio" name="SSL3" disabled></td>
+							    	</tr>
+							    	<tr>
+							    		<td>SSL4</td>
+							    		<td><input type="radio" name="SSL4" checked disabled></td>
+							    		<td><input type="radio" name="SSL4" disabled></td>
+							    	</tr>
+							    </table>
+							    <div class="actions">
+								    <button type="submit" class="btn pull-left prevStep">&#8810; 上一步</button>
+								    <button type="submit" class="btn pull-right nextStep" disabled>下一步 &#8811;</button>
+								    <button type="submit" class="btn btn-warning pull-right" id="config">保存配置</button>
+								  </div>
+								</div>
+
+						    <div id="pubOperPanel" class="wizardPanel">
+							    <div class="actions">
+								    <button type="submit" class="btn pull-left prevStep">&#8810; 上一步</button>
+								    <button type="submit" class="btn btn-warning pull-right" id="pubOper">发布到全部</button>
+								    <button type="submit" class="btn btn-warning pull-right" id="pubB">发布到B</button>
+								    <button type="submit" class="btn btn-warning pull-right" id="pubA">发布到A</button>
+								  </div>
+								</div>
+							</div>
+					  </fieldset>
+					</form>
+				</section>
+			</div>
+		</div>
+	</div>
+
+	<script src="javascripts/ra.js"></script>
+	<script src="javascripts/ws-client.js"></script>
+</body>
+</html>
